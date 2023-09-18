@@ -31,7 +31,7 @@ function Header() {
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
             <li className="nav-item">
               <a
-                href="https://twitter.com/intent/tweet?text=Check%20Tailwind%20Starter%20Kit%2C%20a%20beautiful%20extension%20of%20%23TailwindCSS%20made%20by%20%40CreativeTim%20%23webdesign%20%23starterkit&url=https%3A%2F%2Fwww.creative-tim.com%2Flearning-lab%2Ftailwind-starter-kit%23%2Fpresentation"
+                href="https://twitter.com/ProfNanguti"
                 className="px-3 py-2 flex items-center text-xs uppercase font-bold text-slate-700 hover:text-slate-500"
                 target="_blank"
               >
@@ -43,7 +43,7 @@ function Header() {
             <li className="nav-item">
               <a
                 className="download-button px-3 py-2 flex items-center text-xs uppercase font-bold text-slate-700 hover:text-slate-500"
-                href="/learning-lab/tailwind-starter-kit/documentation/download"
+                href="https://bitbucket.org/nanguti/workspace/overview/"
               >
                 <FontAwesomeIcon icon={faBitbucket} style={{ fontSize: 20 }} />
                 <span className="ml-2">Bitbucket</span>
@@ -51,7 +51,7 @@ function Header() {
             </li>
             <li className="nav-item">
               <a
-                href="https://github.com/creativetimofficial/tailwind-starter-kit/archive/designer-files.zip?ref=tsk-navbar"
+                href="https://www.linkedin.com/in/kevin-w-wanyonyi/"
                 className="download-button px-3 py-2 flex items-center text-xs uppercase font-bold text-slate-700 hover:text-slate-500"
               >
                 <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: 20 }} />

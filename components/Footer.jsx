@@ -39,14 +39,14 @@ function Footer() {
             </h5>
             <div className="mt-6">
               <a
-                href="https://www.twitter.com/creativetim"
+                href="https://twitter.com/ProfNanguti"
                 target="_blank"
                 className="mr-2"
               >
                 <FontAwesomeIcon icon={faTwitter} style={{ fontSize: 20 }} />
               </a>
               <a
-                href="https://www.facebook.com/creativetim"
+                href="https://www.linkedin.com/in/kevin-w-wanyonyi/"
                 target="_blank"
                 className="mr-2"
               >
@@ -54,14 +54,14 @@ function Footer() {
               </a>
 
               <a
-                href="https://www.github.com/creativetimofficial"
+                href="https://github.com/Nanguti/"
                 target="_blank"
                 className="mr-2"
               >
                 <FontAwesomeIcon icon={faGithub} style={{ fontSize: 20 }} />
               </a>
               <a
-                href="https://www.github.com/creativetimofficial"
+                href="https://bitbucket.org/nanguti/workspace/overview/"
                 target="_blank"
                 className="mr-2"
               >
