@@ -1,4 +1,17 @@
 import Hero from "@/components/Hero";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faAngleDoubleRight,
+  faCodeBranch,
+  faCompassDrafting,
+  faFileAlt,
+  faFingerprint,
+  faNewspaper,
+  faPaperPlane,
+  faSitemap,
+} from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faHtml5 } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   // Sample data for cards
@@ -72,7 +85,10 @@ export default function Home() {
                   <div className="relative flex flex-col mt-4">
                     <div className="px-4 py-5 flex-auto">
                       <div className="text-slate-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                        <i className="fas fa-sitemap" />
+                        <FontAwesomeIcon
+                          icon={faSitemap}
+                          style={{ fontSize: 20 }}
+                        />
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">
                         CSS Components
@@ -86,7 +102,10 @@ export default function Home() {
                   <div className="relative flex flex-col min-w-0">
                     <div className="px-4 py-5 flex-auto">
                       <div className="text-slate-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                        <i className="fas fa-drafting-compass" />
+                        <FontAwesomeIcon
+                          icon={faCompassDrafting}
+                          style={{ fontSize: 20 }}
+                        />
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">
                         JavaScript Components
@@ -102,7 +121,10 @@ export default function Home() {
                   <div className="relative flex flex-col min-w-0 mt-4">
                     <div className="px-4 py-5 flex-auto">
                       <div className="text-slate-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                        <i className="fas fa-newspaper" />
+                        <FontAwesomeIcon
+                          icon={faNewspaper}
+                          style={{ fontSize: 20 }}
+                        />
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">Pages</h6>
                       <p className="mb-4 text-slate-500">
@@ -114,7 +136,10 @@ export default function Home() {
                   <div className="relative flex flex-col min-w-0">
                     <div className="px-4 py-5 flex-auto">
                       <div className="text-slate-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                        <i className="fas fa-file-alt" />
+                        <FontAwesomeIcon
+                          icon={faFileAlt}
+                          style={{ fontSize: 20 }}
+                        />
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">
                         Documentation
@@ -134,7 +159,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center">
             <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
               <div className="text-slate-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
-                <i className="fas fa-sitemap text-xl" />
+                <FontAwesomeIcon icon={faSitemap} style={{ fontSize: 20 }} />
               </div>
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
                 CSS Components
@@ -175,7 +200,11 @@ export default function Home() {
                 href="/learning-lab/tailwind-starter-kit/documentation/css/alerts"
               >
                 View All{" "}
-                <i className="fa fa-angle-double-right ml-1 leading-relaxed" />
+                <FontAwesomeIcon
+                  icon={faAngleDoubleRight}
+                  className="ml-1 leading-relaxed"
+                  style={{ fontSize: 20 }}
+                />
               </a>
             </div>
             <div className="w-full md:w-5/12 px-4 mr-auto ml-auto mt-32">
@@ -286,7 +315,10 @@ export default function Home() {
             </div>
             <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
               <div className="text-slate-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
-                <i className="fas fa-drafting-compass text-xl" />
+                <FontAwesomeIcon
+                  icon={faCompassDrafting}
+                  style={{ fontSize: 20 }}
+                />
               </div>
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
                 Javascript Components
@@ -331,7 +363,11 @@ export default function Home() {
                 href="/learning-lab/tailwind-starter-kit/documentation/vue/alerts"
               >
                 View all{" "}
-                <i className="fa fa-angle-double-right ml-1 leading-relaxed" />
+                <FontAwesomeIcon
+                  icon={faAngleDoubleRight}
+                  className="ml-1 leading-relaxed"
+                  style={{ fontSize: 20 }}
+                />
               </a>
             </div>
           </div>
@@ -341,7 +377,7 @@ export default function Home() {
             <div className="w-full md:w-5/12 ml-auto px-12 md:px-4">
               <div className="md:pr-12">
                 <div className="text-slate-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
-                  <i className="fas fa-file-alt text-xl" />
+                  <FontAwesomeIcon icon={faFileAlt} style={{ fontSize: 20 }} />
                 </div>
                 <h3 className="text-3xl font-semibold">
                   Complex Documentation
@@ -357,7 +393,10 @@ export default function Home() {
                     <div className="flex items-center">
                       <div>
                         <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-slate-500 bg-slate-50 mr-3">
-                          <i className="fas fa-fingerprint" />
+                          <FontAwesomeIcon
+                            icon={faFingerprint}
+                            style={{ fontSize: 20 }}
+                          />
                         </span>
                       </div>
                       <div>
@@ -371,7 +410,10 @@ export default function Home() {
                     <div className="flex items-center">
                       <div>
                         <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-slate-500 bg-slate-50 mr-3">
-                          <i className="fab fa-html5" />
+                          <FontAwesomeIcon
+                            icon={faHtml5}
+                            style={{ fontSize: 20 }}
+                          />
                         </span>
                       </div>
                       <div>
@@ -385,7 +427,10 @@ export default function Home() {
                     <div className="flex items-center">
                       <div>
                         <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-slate-500 bg-slate-50 mr-3">
-                          <i className="far fa-paper-plane" />
+                          <FontAwesomeIcon
+                            icon={faPaperPlane}
+                            style={{ fontSize: 20 }}
+                          />
                         </span>
                       </div>
                       <div>
@@ -428,7 +473,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center">
             <div className="w-full md:w-5/12 px-12 md:px-4 ml-auto mr-auto md:mt-64">
               <div className="text-slate-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
-                <i className="fas fa-code-branch text-xl" />
+                <FontAwesomeIcon icon={faCodeBranch} style={{ fontSize: 20 }} />
               </div>
               <h3 className="text-3xl mb-2 font-semibold leading-normal text-white">
                 Open Source
@@ -523,7 +568,7 @@ export default function Home() {
                   target="_blank"
                   className="github-star sm:ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-slate-700 active:bg-slate-600 uppercase text-sm shadow hover:shadow-lg"
                 >
-                  <i className="fab fa-github text-lg mr-1" />
+                  <FontAwesomeIcon icon={faGithub} style={{ fontSize: 20 }} />
                   <span>Help With a Star</span>
                 </a>
               </div>

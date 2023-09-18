@@ -1,4 +1,12 @@
-import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {
+  faBitbucket,
+  faFacebook,
+  faGithub,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   return (
@@ -30,20 +38,34 @@ function Footer() {
               Find us on any of these platforms, we respond 1-2 business days.
             </h5>
             <div className="mt-6">
-              <a href="https://www.twitter.com/creativetim" target="_blank">
-                <i className="fab fa-twitter bg-white text-sky-400 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center" />
+              <a
+                href="https://www.twitter.com/creativetim"
+                target="_blank"
+                className="mr-2"
+              >
+                <FontAwesomeIcon icon={faTwitter} style={{ fontSize: 20 }} />
               </a>
-              <a href="https://www.facebook.com/creativetim" target="_blank">
-                <i className="fab fa-facebook-square bg-white text-sky-600 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center" />
+              <a
+                href="https://www.facebook.com/creativetim"
+                target="_blank"
+                className="mr-2"
+              >
+                <FontAwesomeIcon icon={faLinkedin} style={{ fontSize: 20 }} />
               </a>
-              <a href="https://www.dribbble.com/creativetim" target="_blank">
-                <i className="fab fa-dribbble bg-white text-pink-400 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center" />
+
+              <a
+                href="https://www.github.com/creativetimofficial"
+                target="_blank"
+                className="mr-2"
+              >
+                <FontAwesomeIcon icon={faGithub} style={{ fontSize: 20 }} />
               </a>
               <a
                 href="https://www.github.com/creativetimofficial"
                 target="_blank"
+                className="mr-2"
               >
-                <i className="fab fa-github bg-white text-slate-800 shadow-lg font-lg p-3 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 inline-block text-center" />
+                <FontAwesomeIcon icon={faBitbucket} style={{ fontSize: 20 }} />
               </a>
             </div>
             <p className="text-sm mt-6 text-slate-500 font-semibold">
