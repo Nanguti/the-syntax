@@ -496,8 +496,8 @@ export default function Home() {
               </a>
             </div>
             <div className="w-full md:w-4/12 px-4 mr-auto ml-auto mt-32 relative">
-              <i
-                className="fab fa-github text-slate-700"
+              <FontAwesomeIcon
+                icon={faGithub}
                 style={{
                   fontSize: "55em",
                   position: "absolute",
@@ -506,6 +506,7 @@ export default function Home() {
                   left: "auto",
                   opacity: "0.8",
                 }}
+                className="text-slate-700"
               />
             </div>
           </div>
