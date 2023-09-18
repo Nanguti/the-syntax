@@ -5,6 +5,7 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 function Header() {
   return (
     <nav className="fixed z-50 w-full bg-white top-0 flex flex-wrap items-center justify-between px-2 py-3 shadow-lg">
@@ -20,7 +21,7 @@ function Header() {
             className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
             type="button"
           >
-            <i className="fas fa-bars" />
+            <FontAwesomeIcon icon={faBars} style={{ fontSize: 20 }} />
           </button>
         </div>
         <div

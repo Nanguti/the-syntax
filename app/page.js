@@ -14,16 +14,8 @@ import {
 import { faGithub, faHtml5 } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
-  // Sample data for cards
-  const cardsData = [
-    { title: "Card 1", content: "Card 1 Content" },
-    { title: "Card 2", content: "Card 2 Content" },
-    { title: "Card 3", content: "Card 3 Content" },
-    // Add more card data as needed
-  ];
-
   return (
-    <main className="min-h-screen">
+    <main className="bg-white min-h-screen">
       <Hero />
       <section className="mt-40 pb-40 relative bg-slate-100">
         <div
