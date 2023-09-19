@@ -460,6 +460,53 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="block relative z-1 bg-slate-600">
+        <div className="container mx-auto">
+          <div className="justify-center flex flex-wrap">
+            <div className="w-full lg:w-12/12 px-4 -mt-24">
+              <div className="flex flex-wrap">
+                <div className="w-full lg:w-4/12 px-4">
+                  <h5 className="text-xl font-semibold pb-4 text-center">
+                    Hospital Managemet System
+                  </h5>
+                  <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
+                    <img
+                      alt="..."
+                      className="align-middle border-none max-w-full h-auto rounded-lg"
+                      src="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/login.jpg"
+                    />
+                  </div>
+                </div>
+                <div className="w-full lg:w-4/12 px-4">
+                  <h5 className="text-xl font-semibold pb-4 text-center">
+                    Online Store
+                  </h5>
+                  <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
+                    <img
+                      alt="..."
+                      className="align-middle border-none max-w-full h-auto rounded-lg"
+                      src="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/profile.jpg"
+                    />
+                  </div>
+                </div>
+                <div className="w-full lg:w-4/12 px-4">
+                  <h5 className="text-xl font-semibold pb-4 text-center">
+                    Beautiful Admin Panels
+                  </h5>
+                  <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
+                    <img
+                      alt="..."
+                      className="align-middle border-none max-w-full h-auto rounded-lg"
+                      src="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/landing.jpg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-slate-600 overflow-hidden">
         <div className="container mx-auto pb-64">
           <div className="flex flex-wrap justify-center">

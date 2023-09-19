@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="relative bg-slate-200 pt-8 pb-6">
       <div
@@ -185,13 +186,13 @@ function Footer() {
         <div className="flex flex-wrap items-center md:justify-between justify-center">
           <div className="w-full md:w-4/12 px-4 mx-auto text-center">
             <div className="text-sm text-slate-500 font-semibold py-1">
-              Copyright © 2023 Tailwind Starter Kit by{" "}
+              Copyright &copy; {currentYear}{" "}
               <a
                 href="https://www.creative-tim.com"
                 className="text-slate-500 hover:text-slate-800"
                 target="_blank"
               >
-                Creative Tim
+                The Syntax
               </a>
               .
             </div>
