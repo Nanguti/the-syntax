@@ -1,4 +1,7 @@
+"use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 import {
   faBitbucket,
@@ -6,17 +9,31 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+const links = [
+  { href: "/", text: "The Syntax" },
+  { href: "/blog", text: "Blog" },
+  { href: "/contact", text: "Contact" },
+];
+
 function Header() {
+  const path = usePathname();
   return (
     <nav className="fixed z-50 w-full bg-white top-0 flex flex-wrap items-center justify-between px-2 py-3 shadow-lg">
       <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-          <a
-            className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-slate-700"
-            href="/learning-lab/tailwind-starter-kit/presentation"
-          >
-            The Syntax
-          </a>
+          {links.map((link) => (
+            <Link
+              className={`${
+                link.href === path
+                  ? "text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-yellow-700 "
+                  : "text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-slate-700"
+              }`}
+              href={link.href}
+            >
+              {link.text}
+            </Link>
+          ))}
           <button
             className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
             type="button"
