@@ -13,6 +13,7 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 const links = [
   { href: "/", text: "The Syntax" },
   { href: "/blog", text: "Blog" },
+  { href: "/projects", text: "Projects" },
   { href: "/contact", text: "Contact" },
 ];
 
