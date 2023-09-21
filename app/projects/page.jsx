@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <>
       <MotionWrapper>
-        <main className="mt-16 sm:mt-20 relative py-20">
+        <main className="bg-white mt-16 sm:mt-20 relative py-20">
           <img
             alt=""
             fetchpriority="high"
