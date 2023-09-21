@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 
 function Hero() {
   return (
@@ -19,12 +19,12 @@ function Hero() {
               and insights.
             </p>
             <div className="mt-12">
-              <a
+              <Link
                 className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-pink-500 active:bg-pink-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                 href="/blog"
               >
                 Get started
-              </a>
+              </Link>
               {/* <a
                 href="https://github.com/creativetimofficial/tailwind-starter-kit"
                 className="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-slate-700 active:bg-slate-600 uppercase text-sm shadow hover:shadow-lg"
