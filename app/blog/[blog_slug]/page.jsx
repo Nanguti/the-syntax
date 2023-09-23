@@ -1,12 +1,12 @@
-import React from "react";
-
+import MotionWrapper from "@/components/MotionWrapper";
+import Link from "next/link";
 const BlogDetails = () => {
   return (
-    <>
+    <MotionWrapper>
       <div className="overflow-hidden py-20 bg-white">
         <div className="max-w-8xl mx-auto">
           <div className="flex px-4 pt-8 pb-10 lg:px-8">
-            <a
+            <Link
               className="group flex font-semibold text-sm leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
               href="/blog"
             >
@@ -24,7 +24,7 @@ const BlogDetails = () => {
                 />
               </svg>
               Go back
-            </a>
+            </Link>
           </div>
         </div>
         <div className="px-4 sm:px-6 md:px-8">
@@ -189,7 +189,7 @@ const BlogDetails = () => {
           </div>
         </div>
       </div>
-    </>
+    </MotionWrapper>
   );
 };
 

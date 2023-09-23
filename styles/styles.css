@@ -15,3 +15,7 @@
   background: linear-gradient(90deg, transparent, #3498db);
   transform: rotate(180deg);
 }
+
+.job-detail-page {
+  margin-top: 10px !important;
+}

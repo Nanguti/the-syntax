@@ -13,7 +13,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faHtml5 } from "@fortawesome/free-brands-svg-icons";
 import MotionWrapper from "@/components/MotionWrapper";
-
+export const metadata = {
+  title: "Jobs in Kenya | Find Employment Opportunities - The Syntax",
+  description:
+    "Welcome to The Syntax, the top destination for job seekers in Kenya. Discover exciting job opportunities across various industries. Start your journey today!",
+};
 export default function Home() {
   return (
     <MotionWrapper>
