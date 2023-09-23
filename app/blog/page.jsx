@@ -2,7 +2,6 @@ import MotionWrapper from "@/components/MotionWrapper";
 import axiosClient from "@/utils/axios";
 const Blog = async () => {
   const response = await axiosClient.get("/posts/list");
-  console.log("log posts here " + response.data);
   return (
     <>
       <MotionWrapper>

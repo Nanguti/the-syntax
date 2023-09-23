@@ -3,9 +3,8 @@
 import { useRouter } from "next/navigation";
 
 const Jobcard = ({ job }) => {
-  const router = useRouter;
+  const router = useRouter();
   const handleJobDetails = (slug) => {
-    console.log("job slug goes here" + slug);
     router.push(`jobs/${slug}`);
   };
   return (
