@@ -3,6 +3,16 @@ import axiosClient from "@/utils/axios";
 import parse from "html-react-parser";
 import Link from "next/link";
 
+export async function generateMetadata({ params, searchParams }, parent) {
+  const slug = params.job_slug;
+  const res = await axiosClient.post(`/job/details`, { slug });
+  const title = res.data.jobDetails.title;
+
+  return {
+    title: `The Syntax - ${title}`,
+  };
+}
+
 const JobDetails = async ({ params }) => {
   const slug = params.job_slug;
   const res = await axiosClient.post(`/job/details`, { slug });
@@ -42,19 +52,13 @@ const JobDetails = async ({ params }) => {
               aria-label="Breadcrumbs"
               className="order-first flex space-x-2 text-sm font-semibold"
             >
-              <a
-                className="text-slate-500 hover:text-slate-600"
-                href="/components#product-application-ui"
-              >
+              <a className="text-slate-500 hover:text-slate-600" href="#">
                 Description
               </a>
               <div aria-hidden="true" className="select-none text-slate-400">
                 /
               </div>
-              <a
-                className="text-slate-500 hover:text-slate-600"
-                href="/components#product-application-ui-data-display"
-              >
+              <a className="text-slate-500 hover:text-slate-600" href="#">
                 Requirements
               </a>
             </nav>

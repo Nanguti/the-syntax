@@ -25,7 +25,7 @@ const SearchBar = () => {
     <>
       <section className="mt-3 max-w-sm sm:mx-auto sm:px-4">
         <form action="#" method="post" className="flex flex-wrap -mx-2">
-          <div className="px-2 grow-[9999] basis-64 mt-20">
+          <div className="px-2 grow-[9999] basis-64 mt-15 pt-8">
             <div className="group relative">
               <input
                 type="text"
