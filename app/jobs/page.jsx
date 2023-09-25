@@ -96,7 +96,7 @@ const JobListings = () => {
                 <p className="text-sm text-gray-700">
                   Showing{" "}
                   <span className="font-medium">
-                    {metadata.current_page * 20 + 1 - 10}
+                    {metadata.current_page * 20 + 1 - 20}
                   </span>{" "}
                   to <span className="font-medium">{metadata.to}</span> of{" "}
                   <span className="font-medium">{metadata.total}</span> results
