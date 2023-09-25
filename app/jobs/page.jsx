@@ -4,11 +4,7 @@ import MotionWrapper from "@/components/MotionWrapper";
 import axiosClient from "@/utils/axios";
 import parse from "html-react-parser";
 import { useEffect, useState } from "react";
-// export const metadata = {
-//   title: "Jobs in Kenya | Find Employment Opportunities - The Syntax",
-//   description:
-//     "Welcome to The Syntax, the top destination for job seekers in Kenya. Discover exciting job opportunities across various industries. Start your journey today!",
-// };
+
 const JobListings = () => {
   const [jobs, setJobs] = useState([]);
   const [links, setLinks] = useState([]);
@@ -29,8 +25,6 @@ const JobListings = () => {
     setJobs(response.data.jobs.data);
     setLinks(response.data.jobs.links);
     setMetadata(response.data.jobs);
-    setFrom(metadata.to - 10);
-
     window.scrollTo({
       top: 100,
       behavior: "smooth",
@@ -102,7 +96,7 @@ const JobListings = () => {
                 <p className="text-sm text-gray-700">
                   Showing{" "}
                   <span className="font-medium">
-                    {metadata.current_page * 10 + 1 - 10}
+                    {metadata.current_page * 20 + 1 - 10}
                   </span>{" "}
                   to <span className="font-medium">{metadata.to}</span> of{" "}
                   <span className="font-medium">{metadata.total}</span> results
