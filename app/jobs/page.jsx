@@ -4,16 +4,15 @@ import MotionWrapper from "@/components/MotionWrapper";
 import axiosClient from "@/utils/axios";
 import parse from "html-react-parser";
 import { useEffect, useState } from "react";
-export const metadata = {
-  title: "Jobs in Kenya | Find Employment Opportunities - The Syntax",
-  description:
-    "Welcome to The Syntax, the top destination for job seekers in Kenya. Discover exciting job opportunities across various industries. Start your journey today!",
-};
+// export const metadata = {
+//   title: "Jobs in Kenya | Find Employment Opportunities - The Syntax",
+//   description:
+//     "Welcome to The Syntax, the top destination for job seekers in Kenya. Discover exciting job opportunities across various industries. Start your journey today!",
+// };
 const JobListings = () => {
   const [jobs, setJobs] = useState([]);
   const [links, setLinks] = useState([]);
   const [metadata, setMetadata] = useState([]);
-  const [from, setFrom] = useState(1);
   useEffect(() => {
     getJobs();
   }, []);
