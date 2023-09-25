@@ -28,7 +28,7 @@ const ContactUs = () => {
         </div>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Let's Collaborate to BUild Amazing Things.
+            Let Us Colloborate With You!
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
             {/* Aute magna irure deserunt veniam aliqua magna enim voluptate. */}
@@ -74,23 +74,7 @@ const ContactUs = () => {
                 />
               </div>
             </div>
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="company"
-                className="block text-sm font-semibold leading-6 text-gray-900"
-              >
-                Company
-              </label>
-              <div className="mt-2.5">
-                <input
-                  type="text"
-                  name="company"
-                  id="company"
-                  autoComplete="organization"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
+
             <div className="sm:col-span-2">
               <label
                 htmlFor="email"
@@ -120,19 +104,6 @@ const ContactUs = () => {
                   <label htmlFor="country" className="sr-only">
                     Country
                   </label>
-                  <select
-                    id="country"
-                    name="country"
-                    className="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm"
-                  >
-                    <option>US</option>
-                    <option>CA</option>
-                    <option>EU</option>
-                  </select>
-                  <ChevronDownIcon
-                    className="pointer-events-none absolute right-3 top-0 h-full w-5 text-gray-400"
-                    aria-hidden="true"
-                  />
                 </div>
                 <input
                   type="tel"
