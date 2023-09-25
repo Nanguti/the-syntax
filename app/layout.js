@@ -11,7 +11,7 @@ config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Developers' Corner",
+  title: "The Syntax - Developer insights & Job Vacancies in Kenya",
   description:
     "Dive into the world of Laravel, Next.js, React.js, Django, Vue.js, Nodejs & Express.js, MySQL, DevOps, CI/CD pipelines, Git cheatsheets, and Q&A. Your one-stop destination for tech tutorials and insights.",
 };

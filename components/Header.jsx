@@ -6,10 +6,10 @@ import Link from "next/link";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const links = [
-  { href: "/jobs", text: "Jobs" },
+  { href: "/jobs", text: "Jobs Vacancies" },
   { href: "/blog", text: "Blog" },
   { href: "/projects", text: "Projects" },
-  { href: "/contact", text: "Contact" },
+  { href: "/contact-us", text: "Contact us" },
 ];
 
 function Header() {
