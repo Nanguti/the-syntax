@@ -19,3 +19,10 @@
 .job-detail-page {
   margin-top: 10px !important;
 }
+
+b,
+strong {
+  line-height: 3;
+  color: #475769;
+  font-size: 18px;
+}
