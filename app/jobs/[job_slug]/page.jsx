@@ -1,6 +1,7 @@
 import MotionWrapper from "@/components/MotionWrapper";
 import axiosClient from "@/utils/axios";
 import parse from "html-react-parser";
+import Link from "next/link";
 
 const JobDetails = async ({ params }) => {
   const slug = params.job_slug;
@@ -8,10 +9,33 @@ const JobDetails = async ({ params }) => {
   const jobDetails = res.data.jobDetails;
   return (
     <MotionWrapper>
-      <div className="bg-white py-20">
+      <div className="bg-white pt-10 pb-20">
         <div className="relative mx-auto mt-20 w-full max-w-container px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto">
+            <div className="flex px-4 pb-10 lg:px-8">
+              <Link
+                className="group flex font-semibold text-sm leading-6 text-slate-700 hover:text-slate-900 dark:text-slate-200 dark:hover:text-white"
+                href="/jobs"
+              >
+                <svg
+                  viewBox="0 -9 3 24"
+                  className="overflow-visible mr-3 text-slate-400 w-auto h-6 group-hover:text-slate-600 dark:group-hover:text-slate-300"
+                >
+                  <path
+                    d="M3 0L0 3L3 6"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                Go back
+              </Link>
+            </div>
+          </div>
           <div className="flex flex-col mb-10 items-center">
-            <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900">
+            <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-slate-900">
               {jobDetails.title}
             </h1>
             <nav
@@ -22,7 +46,7 @@ const JobDetails = async ({ params }) => {
                 className="text-slate-500 hover:text-slate-600"
                 href="/components#product-application-ui"
               >
-                Application UI
+                Description
               </a>
               <div aria-hidden="true" className="select-none text-slate-400">
                 /
@@ -31,7 +55,7 @@ const JobDetails = async ({ params }) => {
                 className="text-slate-500 hover:text-slate-600"
                 href="/components#product-application-ui-data-display"
               >
-                Data Display
+                Requirements
               </a>
             </nav>
           </div>
