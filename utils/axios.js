@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "https://thesyntax.nanguti.co.ke/api",
+  baseURL: "http://localhost:8000/api/",
   headers: {
     "Content-Type": "application/json",
   },
