@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Switch } from "@headlessui/react";
 import MotionWrapper from "@/components/MotionWrapper";
+import axiosClient from "@/utils/axios";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -10,6 +11,39 @@ function classNames(...classes) {
 
 const ContactUs = () => {
   const [agreed, setAgreed] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
+  });
+  const handleSubmit = async (e) => {
+    console.log("form data " + formData.firstName);
+    e.preventDefault();
+
+    if (!agreed) {
+      alert("Please agree to the policies before submitting the form.");
+      return;
+    }
+
+    try {
+      const response = await axiosClient.post("/contactus", formData);
+      if (response.message === "success") {
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+          message: "",
+        });
+      }
+      setFormSubmitted(true);
+    } catch (error) {
+      console.error("Form submission error: ", error);
+    }
+  };
 
   return (
     <MotionWrapper>
@@ -35,8 +69,7 @@ const ContactUs = () => {
           </p>
         </div>
         <form
-          action="#"
-          method="POST"
+          onSubmit={handleSubmit}
           className="mx-auto mt-16 max-w-xl sm:mt-20"
         >
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -54,6 +87,10 @@ const ContactUs = () => {
                   id="first-name"
                   autoComplete="given-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
+                  value={formData.firstName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, firstName: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -69,8 +106,12 @@ const ContactUs = () => {
                   type="text"
                   name="last-name"
                   id="last-name"
-                  autoComplete="family-name"
+                  autoComplete="given-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
+                  value={formData.lastName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, lastName: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -87,8 +128,12 @@ const ContactUs = () => {
                   type="email"
                   name="email"
                   id="email"
-                  autoComplete="email"
+                  autoComplete="given-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -106,11 +151,15 @@ const ContactUs = () => {
                   </label>
                 </div>
                 <input
-                  type="tel"
+                  type="number"
                   name="phone-number"
                   id="phone-number"
-                  autoComplete="tel"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
+                  autoComplete="given-name"
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
+                  value={formData.phoneNumber}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phoneNumber: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -123,11 +172,16 @@ const ContactUs = () => {
               </label>
               <div className="mt-2.5">
                 <textarea
+                  type="text"
                   name="message"
                   id="message"
-                  rows={4}
+                  row="4"
+                  autoComplete="given-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
-                  defaultValue={""}
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                 />
               </div>
             </div>
