@@ -470,12 +470,12 @@ export default function Home() {
           <div className="justify-center text-center flex flex-wrap mt-24">
             <div className="w-full md:w-6/12 px-12 md:px-4">
               <h2 className="font-semibold text-4xl">
-                Beautiful Example Pages
+                Beautiful Example Projects
               </h2>
               <p className="text-lg leading-relaxed mt-4 mb-4 text-slate-500">
-                Tailwind Starter Kit is a completly new product built using our
-                past experience in web templates. Take the examples we made for
-                you and start playing with them.
+                My projects include a Hospital Management System, an Online
+                Stores, and a Property Listing Apps. I use MySQL for data
+                storage and Tailwind CSS for styling..
               </p>
             </div>
           </div>
@@ -613,7 +613,7 @@ export default function Home() {
                   </span>
                 </p>
                 <h3 className="font-semibold text-3xl">
-                  Do you love this Starter Kit?
+                  Do you love our work?
                 </h3>
                 <p className="text-slate-500 text-lg leading-relaxed mt-4 mb-4">
                   Cause if you do, it can be yours now. Hit the buttons below to
@@ -628,7 +628,7 @@ export default function Home() {
                     Get started
                   </a>
                   <a
-                    href="https://github.com/creativetimofficial/tailwind-starter-kit"
+                    href="#"
                     target="_blank"
                     className="github-star sm:ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-slate-700 active:bg-slate-600 uppercase text-sm shadow hover:shadow-lg"
                   >

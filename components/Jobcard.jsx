@@ -7,6 +7,16 @@ const Jobcard = ({ job }) => {
   const handleJobDetails = (slug) => {
     router.push(`jobs/${slug}`);
   };
+  function formatDate(dateString) {
+    const inputDate = new Date(dateString);
+    const options = {
+      weekday: "short",
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    };
+    return new Intl.DateTimeFormat("en-US", options).format(inputDate);
+  }
   return (
     <>
       <article className="relative group">
@@ -35,7 +45,7 @@ const Jobcard = ({ job }) => {
             <dt className="sr-only">Date</dt>
             <dd className="whitespace-nowrap text-sm leading-6 dark:text-slate-400">
               <time dateTime="2023-08-07T10:30:00.000Z">
-                {job.date_published}
+                {formatDate(job.date_published)}
               </time>
             </dd>
           </dl>
