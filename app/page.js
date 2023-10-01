@@ -494,31 +494,31 @@ export default function Home() {
                       <img
                         alt="..."
                         className="align-middle border-none max-w-full h-auto rounded-lg"
-                        src="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/login.jpg"
+                        src="/projects/hostpital-management-system.png"
                       />
                     </div>
                   </div>
                   <div className="w-full lg:w-4/12 px-4">
                     <h5 className="text-xl font-semibold pb-4 text-center">
-                      Online Store
+                      eCommerce Store
                     </h5>
                     <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
                       <img
                         alt="..."
                         className="align-middle border-none max-w-full h-auto rounded-lg"
-                        src="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/profile.jpg"
+                        src="/projects/simplifi-networks-online-store.png"
                       />
                     </div>
                   </div>
                   <div className="w-full lg:w-4/12 px-4">
                     <h5 className="text-xl font-semibold pb-4 text-center">
-                      Beautiful Admin Panels
+                      Property Listing App
                     </h5>
                     <div className="hover:-mt-4 relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150">
                       <img
                         alt="..."
                         className="align-middle border-none max-w-full h-auto rounded-lg"
-                        src="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/img/landing.jpg"
+                        src="/projects/property-listing-app.png"
                       />
                     </div>
                   </div>
