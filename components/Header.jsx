@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimesSquare } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const links = [
   { href: "/jobs", text: "Jobs Vacancies" },
@@ -13,6 +14,7 @@ const links = [
 ];
 
 function Header() {
+  const [isMenuToggled, setIsMenuToggled] = useState(false);
   const path = usePathname();
   return (
     <nav className="fixed z-50 w-full bg-white top-0 flex flex-wrap items-center justify-between px-2 py-3 shadow-lg">
@@ -31,6 +33,7 @@ function Header() {
           <button
             className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
             type="button"
+            onClick={() => setIsMenuToggled(!isMenuToggled)}
           >
             <FontAwesomeIcon icon={faBars} style={{ fontSize: 20 }} />
           </button>
@@ -57,6 +60,39 @@ function Header() {
           </ul>
         </div>
       </div>
+      {/* Mobile Menu */}
+      {isMenuToggled && (
+        <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-slate-200 drop-shadow-lg ">
+          {/* Close Icon */}
+          <div className="flex justify-end py-4 px-6 ">
+            <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+              <FontAwesomeIcon
+                icon={faTimesSquare}
+                className="text-slate-700"
+                style={{ fontSize: 32 }}
+              />
+            </button>
+          </div>
+          <div className="ml-[10%] flex flex-col gap-4">
+            <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+              {links.map((link, index) => (
+                <li className="nav-item" key={index}>
+                  <Link
+                    href={link.href}
+                    className={`${
+                      link.href === path
+                        ? "text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap capitalize text-yellow-700 "
+                        : "text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap capitalize text-slate-700"
+                    }`}
+                  >
+                    <span className="ml-2">{link.text}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

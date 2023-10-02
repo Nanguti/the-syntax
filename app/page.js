@@ -473,9 +473,9 @@ export default function Home() {
                 Beautiful Example Projects
               </h2>
               <p className="text-lg leading-relaxed mt-4 mb-4 text-slate-500">
-                My projects include a Hospital Management System, an Online
-                Stores, and a Property Listing Apps. I use MySQL for data
-                storage and Tailwind CSS for styling..
+                My projects include a Hospital Management System, Online Stores,
+                and a Property Listing Apps. I use MySQL for data storage and
+                Tailwind CSS for styling..
               </p>
             </div>
           </div>

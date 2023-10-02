@@ -20,7 +20,6 @@ const ContactUs = () => {
     message: "",
   });
   const handleSubmit = async (e) => {
-    console.log("form data " + formData.firstName);
     e.preventDefault();
 
     if (!agreed) {
