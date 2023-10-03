@@ -7,6 +7,7 @@ import { faBars, faTimesSquare } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const links = [
+  { href: "/", text: "Home" },
   { href: "/jobs", text: "Jobs Vacancies" },
   { href: "/blog", text: "Blog" },
   { href: "/projects", text: "Projects" },
@@ -64,7 +65,7 @@ function Header() {
       {isMenuToggled && (
         <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-slate-200 drop-shadow-lg ">
           {/* Close Icon */}
-          <div className="flex justify-end py-4 px-6 ">
+          <div className="flex justify-end py-4 px-6 bg-white">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <FontAwesomeIcon
                 icon={faTimesSquare}

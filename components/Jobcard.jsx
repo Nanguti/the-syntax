@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Reveal from "./Reveal";
 
 const Jobcard = ({ job }) => {
   const router = useRouter();
@@ -18,7 +19,7 @@ const Jobcard = ({ job }) => {
     return new Intl.DateTimeFormat("en-US", options).format(inputDate);
   }
   return (
-    <>
+    <Reveal>
       <article className="relative group">
         <div className="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl group-hover:bg-slate-50/70 dark:group-hover:bg-slate-800/50" />
         <svg
@@ -74,7 +75,7 @@ const Jobcard = ({ job }) => {
           </svg>
         </a>
       </article>
-    </>
+    </Reveal>
   );
 };
 
