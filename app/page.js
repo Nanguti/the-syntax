@@ -24,7 +24,7 @@ export default function Home() {
     <MotionWrapper>
       <main className="bg-white min-h-screen">
         <Hero />
-        <Reveal></Reveal>
+
         <section className="mt-40 pb-40 relative bg-slate-100">
           <Reveal>
             <div

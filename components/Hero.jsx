@@ -5,7 +5,7 @@ function Hero() {
   return (
     <Reveal>
       <section
-        className="header relative pt-16 items-center flex h-screen"
+        className="header relative  items-center flex h-screen"
         style={{ maxHeight: 860 }}
       >
         <div className="container mx-auto items-center flex flex-wrap">

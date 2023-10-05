@@ -34,7 +34,7 @@ function Header() {
           <button
             className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
             type="button"
-            onClick={() => setIsMenuToggled(!isMenuToggled)}
+            onClick={() => setIsMenuToggled((prev) => !prev)}
           >
             <FontAwesomeIcon icon={faBars} style={{ fontSize: 20 }} />
           </button>
@@ -85,6 +85,7 @@ function Header() {
                         ? "text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap capitalize text-yellow-700 "
                         : "text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap capitalize text-slate-700"
                     }`}
+                    onClick={() => setIsMenuToggled(false)}
                   >
                     <span className="ml-2">{link.text}</span>
                   </Link>
