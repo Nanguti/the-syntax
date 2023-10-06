@@ -10,15 +10,18 @@ const JobListings = () => {
   const [jobs, setJobs] = useState([]);
   const [links, setLinks] = useState([]);
   const [metadata, setMetadata] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     getJobs();
   }, []);
 
   const getJobs = async () => {
+    setLoading(true);
     const response = await axiosClient.get("/jobs/list");
     setJobs(response.data.jobs.data);
     setLinks(response.data.jobs.links);
     setMetadata(response.data.jobs);
+    setLoading(false);
   };
 
   const handlePagination = async (url) => {
@@ -45,13 +48,16 @@ const JobListings = () => {
             </p>
             <SearchBar />
           </header>
-          <div className="relative sm:pb-12 sm:ml-[calc(2rem+1px)] md:ml-[calc(3.5rem+1px)] lg:ml-[max(calc(14.5rem+1px),calc(100%-48rem))]">
+          <div className="relative sm:pb-12 sm:ml-[calc(2rem+1px)] md:ml-[calc(3.5rem+1px)] lg:ml-[max(calc(14.5rem+1px),calc(100%-48rem))] min-h-300 ">
             <div className="hidden absolute top-3 bottom-0 right-full mr-7 md:mr-[3.25rem] w-px bg-slate-200 dark:bg-slate-800 sm:block" />
-            <div className="space-y-16">
-              {jobs.map((job) => (
-                <Jobcard job={job} key={job.id} />
-              ))}
-            </div>
+            {loading && <div>Loading ...</div>}
+            {!loading && (
+              <div className="space-y-16">
+                {jobs.map((job) => (
+                  <Jobcard job={job} key={job.id} />
+                ))}
+              </div>
+            )}
           </div>
           <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
             <div className="flex flex-1 justify-between sm:hidden">
