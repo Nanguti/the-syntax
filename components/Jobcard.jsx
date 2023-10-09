@@ -1,13 +1,8 @@
 "use client";
-
-import { useRouter } from "next/navigation";
 import Reveal from "./Reveal";
+import Link from "next/link";
 
 const Jobcard = ({ job }) => {
-  const router = useRouter();
-  const handleJobDetails = (slug) => {
-    router.push(`jobs/${slug}`);
-  };
   function formatDate(dateString) {
     const inputDate = new Date(dateString);
     const options = {
@@ -51,8 +46,8 @@ const Jobcard = ({ job }) => {
             </dd>
           </dl>
         </div>
-        <a
-          onClick={() => handleJobDetails(job.slug)}
+        <Link
+          href={`jobs/${job.slug}`}
           className="flex items-center text-sm text-sky-500 font-medium"
         >
           <span className="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl" />
@@ -73,7 +68,7 @@ const Jobcard = ({ job }) => {
           >
             <path d="M0 0L3 3L0 6" />
           </svg>
-        </a>
+        </Link>
       </article>
     </Reveal>
   );
