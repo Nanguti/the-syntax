@@ -1,5 +1,8 @@
+"use client";
 import MotionWrapper from "@/components/MotionWrapper";
 import Reveal from "@/components/Reveal";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import React from "react";
 
 const Projects = () => {
@@ -52,11 +55,19 @@ const Projects = () => {
             </p>
           </div>
           <ul className="grid max-w-[26rem] sm:max-w-[52.5rem] mt-16 sm:mt-20 md:mt-32 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mx-auto gap-6 lg:gap-y-8 xl:gap-x-8 lg:max-w-7xl px-4 sm:px-6 lg:px-8">
-            {items.map((map) => (
-              <Reveal>
+            {items.map((map, index) => (
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  translateX: -50,
+                  translateY: -50,
+                }}
+                animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.2 }}
+              >
                 <li className="group relative rounded-3xl bg-slate-50 p-6 dark:bg-slate-800/80 dark:highlight-white/5 hover:bg-slate-100 dark:hover:bg-slate-700/50">
                   <div className="aspect-[672/494] relative rounded-md transform overflow-hidden shadow-[0_2px_8px_rgba(15,23,42,0.08)] bg-slate-200 dark:bg-slate-700">
-                    <img
+                    <Image
                       alt=""
                       fetchpriority="high"
                       width={672}
@@ -105,7 +116,7 @@ const Projects = () => {
                     </p>
                   </div>
                 </li>
-              </Reveal>
+              </motion.div>
             ))}
           </ul>
         </main>
