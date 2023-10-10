@@ -63,7 +63,7 @@ const Projects = () => {
                   translateY: -50,
                 }}
                 animate={{ opacity: 1, translateX: 0, translateY: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.2 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 <li className="group relative rounded-3xl bg-slate-50 p-6 dark:bg-slate-800/80 dark:highlight-white/5 hover:bg-slate-100 dark:hover:bg-slate-700/50">
                   <div className="aspect-[672/494] relative rounded-md transform overflow-hidden shadow-[0_2px_8px_rgba(15,23,42,0.08)] bg-slate-200 dark:bg-slate-700">
