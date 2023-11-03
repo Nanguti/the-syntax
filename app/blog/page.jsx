@@ -16,6 +16,7 @@ const Blog = () => {
   }, []);
   const getPosts = async () => {
     const response = await axiosClient.get("/posts/list");
+    console.log("log response " + response.data);
     setPosts(response.data.posts.data);
     setLinks(response.data.posts.links);
     setMetadata(response.data.posts);
@@ -90,7 +91,7 @@ const Blog = () => {
             <div className="hidden absolute top-3 bottom-0 right-full mr-7 md:mr-[3.25rem] w-px bg-slate-200 dark:bg-slate-800 sm:block" />
             <div className="space-y-16">
               {posts.map((post) => (
-                <article className="relative group">
+                <article key={post.id} className="relative group">
                   <div className="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl group-hover:bg-slate-50/70 dark:group-hover:bg-slate-800/50" />
                   <svg
                     viewBox="0 0 9 9"
