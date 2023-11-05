@@ -1,18 +1,9 @@
 "use client";
 import Reveal from "./Reveal";
 import Link from "next/link";
+import { formatDate } from "@/utils/helperFunctions";
 
 const Jobcard = ({ job }) => {
-  function formatDate(dateString) {
-    const inputDate = new Date(dateString);
-    const options = {
-      weekday: "short",
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    };
-    return new Intl.DateTimeFormat("en-US", options).format(inputDate);
-  }
   return (
     <Reveal>
       <article className="relative group">

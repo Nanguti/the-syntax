@@ -6,16 +6,6 @@ import parse from "html-react-parser";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-// export async function generateMetadata({ params, searchParams }, parent) {
-//   const slug = params.job_slug;
-//   const res = await axiosClient.post(`/job/details`, { slug });
-//   const title = res.data.jobDetails.title;
-
-//   return {
-//     title: `The Syntax - ${title}`,
-//   };
-// }
-
 const JobDetails = ({ params }) => {
   const [loading, setLoading] = useState(false);
   const [jobDetails, setJobDetails] = useState(null);
