@@ -4,7 +4,7 @@ import Link from "next/link";
 import parse from "html-react-parser";
 const BlogDetails = async ({ params }) => {
   const slug = params.post_slug;
-  const res = await axiosClient.post(`/post/detail/`, { slug });
+  const res = await axiosClient.post(`/post/detail`, { slug });
   const postDetails = res.data.postDetail;
   return (
     <MotionWrapper>
