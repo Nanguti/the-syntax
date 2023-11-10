@@ -25,6 +25,8 @@ export default function RootLayout({ children }) {
         <Header />
         <div className="min-h-screen">{children}</div>
         <Footer />
+        <Script src="/node_modules/@material-tailwind/html/scripts/tabs.js" />
+        <Script src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js" />
       </body>
     </html>
   );

@@ -16,7 +16,6 @@ const Blog = () => {
   }, []);
   const getPosts = async () => {
     const response = await axiosClient.get("/posts/list");
-    console.log("log response " + response.data);
     setPosts(response.data.posts.data);
     setLinks(response.data.posts.links);
     setMetadata(response.data.posts);
