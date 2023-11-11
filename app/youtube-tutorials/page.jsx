@@ -20,7 +20,7 @@ const YoutubeTutorials = async () => {
   const getCategoryVideos = async (slug) => {};
   return (
     <MotionWrapper>
-      <header className="sm:text-center pt-20">
+      <header className="sm:text-center " style={{ paddingTop: "64px" }}>
         <div>
           <div className="container-fluid">
             <Tabs value="html">
@@ -35,6 +35,7 @@ const YoutubeTutorials = async () => {
                       <span className="z-999 sub-cat-tabs">
                         {category.name}
                       </span>
+                      <div className="absolute inset-0 z-10 h-full bg-custom-color rounded-sm shadow-custom"></div>
                     </Tab>
                   );
                 })}
