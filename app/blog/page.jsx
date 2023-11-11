@@ -2,13 +2,13 @@
 import MotionWrapper from "@/components/MotionWrapper";
 import axiosClient from "@/utils/axios";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import parse from "html-react-parser";
+import { Tabs, TabsHeader, Tab } from "@material-tailwind/react";
 
 const Blog = () => {
-  const router = useRouter();
   const [posts, setPosts] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [links, setLinks] = useState([]);
   const [metadata, setMetadata] = useState([]);
   useEffect(() => {
@@ -16,13 +16,16 @@ const Blog = () => {
   }, []);
   const getPosts = async () => {
     const response = await axiosClient.get("/posts/list");
+    setCategories(response.data.categories);
     setPosts(response.data.posts.data);
     setLinks(response.data.posts.links);
     setMetadata(response.data.posts);
   };
 
-  const handlePostDetail = async (slug) => {
-    router.push(`/blog/${slug}`);
+  const getPostsByCategory = async (category_id) => {
+    const res = await axiosClient.post(`/category/posts`, { category_id });
+    console.log(res.data);
+    setPosts(res.data.posts.data);
   };
 
   const handlePagination = async (url) => {
@@ -38,53 +41,34 @@ const Blog = () => {
 
   return (
     <>
+      <header className="sm:text-center " style={{ paddingTop: "64px" }}>
+        <div>
+          <div className="container-fluid"></div>
+        </div>
+      </header>
       <MotionWrapper>
         <main className="bg-white max-w-[52rem] mx-auto px-4 pb-28 sm:px-6 md:px-8 xl:px-12 lg:max-w-6xl">
-          <header className="sm:text-center py-40">
+          <header className="sm:text-center pt-14 pb-10">
             <h1 className="mb-4 text-3xl sm:text-4xl tracking-tight text-slate-900 font-extrabold dark:text-slate-200">
               Latest Blog Articles
             </h1>
-            <p className="text-lg text-slate-700 dark:text-slate-400">
-              The latest developer insights.
-            </p>
-            <section className="mt-3 max-w-sm sm:mx-auto sm:px-4">
-              <h2 className="sr-only">Sign up for our newsletter</h2>
-              <form action="#" method="post" className="flex flex-wrap -mx-2">
-                <div className="px-2 grow-[9999] basis-64 mt-3">
-                  <div className="group relative">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                      className="w-6 h-full absolute inset-y-0 left-3 text-slate-400 pointer-events-none group-focus-within:text-sky-500 dark:group-focus-within:text-slate-400"
+            <Tabs value="html">
+              <TabsHeader className="bg-slate-100 py-1">
+                {categories.map((category) => {
+                  return (
+                    <Tab
+                      key={category.id}
+                      value={category.id}
+                      onClick={() => getPostsByCategory(category.id)}
                     >
-                      <path d="M5 7.92C5 6.86 5.865 6 6.931 6h10.138C18.135 6 19 6.86 19 7.92v8.16c0 1.06-.865 1.92-1.931 1.92H6.931A1.926 1.926 0 0 1 5 16.08V7.92Z" />
-                      <path d="m6 7 6 5 6-5" />
-                    </svg>
-                    <input
-                      name="search_query"
-                      type="text"
-                      required=""
-                      aria-label="Email address"
-                      className="appearance-none shadow rounded-md ring-1 ring-slate-900/5 leading-5 sm:text-sm border border-transparent py-2 placeholder:text-slate-400 pl-12 pr-3 block w-full text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-500 bg-white dark:bg-slate-700/20 dark:ring-slate-200/20 dark:focus:ring-sky-500 dark:text-white"
-                      placeholder="Enter term to search"
-                    />
-                  </div>
-                </div>
-                <div className="px-2 grow flex mt-3">
-                  <button
-                    type="submit"
-                    className="bg-sky-500 flex-auto shadow text-white rounded-md text-sm border-y border-transparent py-2 font-semibold px-3 hover:bg-sky-600 dark:hover:bg-sky-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-300 dark:focus:ring-offset-slate-900 dark:focus:ring-sky-700"
-                  >
-                    Search
-                  </button>
-                </div>
-              </form>
-            </section>
+                      <span className="z-999 sub-cat-tabs">
+                        {category.name}
+                      </span>
+                    </Tab>
+                  );
+                })}
+              </TabsHeader>
+            </Tabs>
           </header>
           <div className="relative sm:pb-12 sm:ml-[calc(2rem+1px)] md:ml-[calc(3.5rem+1px)] lg:ml-[max(calc(14.5rem+1px),calc(100%-48rem))]">
             <div className="hidden absolute top-3 bottom-0 right-full mr-7 md:mr-[3.25rem] w-px bg-slate-200 dark:bg-slate-800 sm:block" />
