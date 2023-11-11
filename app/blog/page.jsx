@@ -11,11 +11,14 @@ const Blog = () => {
   const [categories, setCategories] = useState([]);
   const [links, setLinks] = useState([]);
   const [metadata, setMetadata] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     getPosts();
   }, []);
   const getPosts = async () => {
+    setLoading(true);
     const response = await axiosClient.get("/posts/list");
+    setLoading(false);
     setCategories(response.data.categories);
     setPosts(response.data.posts.data);
     setLinks(response.data.posts.links);
@@ -23,8 +26,9 @@ const Blog = () => {
   };
 
   const getPostsByCategory = async (category_id) => {
+    setLoading(true);
     const res = await axiosClient.post(`/category/posts`, { category_id });
-    console.log(res.data);
+    setLoading(false);
     setPosts(res.data.posts.data);
   };
 
@@ -72,62 +76,68 @@ const Blog = () => {
           </header>
           <div className="relative sm:pb-12 sm:ml-[calc(2rem+1px)] md:ml-[calc(3.5rem+1px)] lg:ml-[max(calc(14.5rem+1px),calc(100%-48rem))]">
             <div className="hidden absolute top-3 bottom-0 right-full mr-7 md:mr-[3.25rem] w-px bg-slate-200 dark:bg-slate-800 sm:block" />
-            <div className="space-y-16">
-              {posts.map((post) => (
-                <article key={post.id} className="relative group">
-                  <div className="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl group-hover:bg-slate-50/70 dark:group-hover:bg-slate-800/50" />
-                  <svg
-                    viewBox="0 0 9 9"
-                    className="hidden absolute right-full mr-6 top-2 text-slate-200 dark:text-slate-600 md:mr-12 w-[calc(0.5rem+1px)] h-[calc(0.5rem+1px)] overflow-visible sm:block"
-                  >
-                    <circle
-                      cx="4.5"
-                      cy="4.5"
-                      r="4.5"
-                      stroke="currentColor"
-                      className="fill-white dark:fill-slate-900"
-                      strokeWidth={2}
-                    />
-                  </svg>
-                  <div className="relative">
-                    <h3 className="text-base font-semibold tracking-tight text-slate-900 dark:text-slate-200 pt-8 lg:pt-0">
-                      {post.title}
-                    </h3>
-                    <div className="mt-2 mb-4 prose prose-slate prose-a:relative prose-a:z-10 dark:prose-dark line-clamp-2">
-                      <p>{post.summary}</p>
-                    </div>
-                    <dl className="absolute left-0 top-0 lg:left-auto lg:right-full lg:mr-[calc(6.5rem+1px)]">
-                      <dt className="sr-only">Date</dt>
-                      <dd className="whitespace-nowrap text-sm leading-6 dark:text-slate-400">
-                        <time dateTime={post.created_at.substring(0, 10)}>
-                          {post.created_at.substring(0, 10)}
-                        </time>
-                      </dd>
-                    </dl>
-                  </div>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="flex items-center text-sm text-sky-500 font-medium cursor-pointer"
-                  >
-                    <span className="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl" />
-                    <span className="relative">Read more</span>
+            {loading && <>Loading..</>}
+            {!loading && (
+              <div className="space-y-16">
+                {posts.map((post) => (
+                  <article key={post.id} className="relative group">
+                    <div className="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl group-hover:bg-slate-50/70 dark:group-hover:bg-slate-800/50" />
                     <svg
-                      className="relative mt-px overflow-visible ml-2.5 text-sky-300 dark:text-sky-700"
-                      width={3}
-                      height={6}
-                      viewBox="0 0 3 6"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                      viewBox="0 0 9 9"
+                      className="hidden absolute right-full mr-6 top-2 text-slate-200 dark:text-slate-600 md:mr-12 w-[calc(0.5rem+1px)] h-[calc(0.5rem+1px)] overflow-visible sm:block"
                     >
-                      <path d="M0 0L3 3L0 6" />
+                      <circle
+                        cx="4.5"
+                        cy="4.5"
+                        r="4.5"
+                        stroke="currentColor"
+                        className="fill-white dark:fill-slate-900"
+                        strokeWidth={2}
+                      />
                     </svg>
-                  </Link>
-                </article>
-              ))}
-            </div>
+                    <div className="relative">
+                      <h3 className="text-base font-semibold tracking-tight text-slate-900 dark:text-slate-200 pt-8 lg:pt-0">
+                        {post.title}
+                      </h3>
+                      <div className="mt-2 mb-4 prose prose-slate prose-a:relative prose-a:z-10 dark:prose-dark line-clamp-2">
+                        <p>{post.summary}</p>
+                      </div>
+                      <dl className="absolute left-0 top-0 lg:left-auto lg:right-full lg:mr-[calc(6.5rem+1px)]">
+                        <dt className="sr-only">Date</dt>
+                        <dd className="whitespace-nowrap text-sm leading-6 dark:text-slate-400">
+                          <time dateTime={post.created_at.substring(0, 10)}>
+                            {post.created_at.substring(0, 10)}
+                          </time>
+                        </dd>
+                      </dl>
+                    </div>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="flex items-center text-sm text-sky-500 font-medium cursor-pointer"
+                    >
+                      <span className="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl" />
+                      <span className="relative">Read more</span>
+                      <svg
+                        className="relative mt-px overflow-visible ml-2.5 text-sky-300 dark:text-sky-700"
+                        width={3}
+                        height={6}
+                        viewBox="0 0 3 6"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M0 0L3 3L0 6" />
+                      </svg>
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            )}
+            {!loading && posts.length === 0 && (
+              <>No articles yet. Try again later!</>
+            )}
           </div>
 
           <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
