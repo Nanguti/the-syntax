@@ -24,7 +24,7 @@ const YoutubeTutorials = async () => {
         <div>
           <div className="container-fluid">
             <Tabs value="html">
-              <TabsHeader className="bg-slate-200">
+              <TabsHeader className="bg-slate-100 py-1 px-10">
                 {categories.map((category) => {
                   return (
                     <Tab
@@ -35,7 +35,6 @@ const YoutubeTutorials = async () => {
                       <span className="z-999 sub-cat-tabs">
                         {category.name}
                       </span>
-                      <div className="absolute inset-0 z-10 h-full bg-custom-color rounded-sm shadow-custom"></div>
                     </Tab>
                   );
                 })}
