@@ -42,3 +42,7 @@ strong {
 .hero-banner p {
   font-size: 1.25rem;
 }
+.sub-cat-tabs {
+  position: relative;
+  z-index: 40;
+}

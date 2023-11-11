@@ -121,9 +121,9 @@ const Blog = () => {
                       </dd>
                     </dl>
                   </div>
-                  <a
+                  <Link
+                    href={`/blog/${post.slug}`}
                     className="flex items-center text-sm text-sky-500 font-medium cursor-pointer"
-                    onClick={() => handlePostDetail(post.slug)}
                   >
                     <span className="absolute -inset-y-2.5 -inset-x-4 md:-inset-y-4 md:-inset-x-6 sm:rounded-2xl" />
                     <span className="relative">Read more</span>
@@ -140,7 +140,7 @@ const Blog = () => {
                     >
                       <path d="M0 0L3 3L0 6" />
                     </svg>
-                  </a>
+                  </Link>
                 </article>
               ))}
             </div>
