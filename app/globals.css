@@ -55,3 +55,9 @@ p {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
+b,
+strong {
+  line-height: 0;
+  color: #475769;
+  font-size: 18px;
+}
