@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "https://thesyntax.nanguti.co.ke/api",
+  baseURL: "https://thesyntax.swafifilms.com/api",
   headers: {
     "Content-Type": "application/json",
   },
